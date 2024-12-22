@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Utils</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #4caf50;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: #666;
+}
+
+header h4
+{
+    text-align: end;
+    margin-bottom: 2px;
+    margin-top: 5px;
+}
+/* Form and Textarea */
+form {
+    margin: 20px 0;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1em;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    flex: 1;
+    text-align: center;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+button:focus {
+    outline: none;
+    border: 2px solid #45a049;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="username">
+                <h4>{{name}}</h4>
+            </div>
+            <h1>Text Utils</h1>
+            <p>Perform various actions on your text below</p>
+        </header>
+        <main>
+            <form action="/process" method="POST">
+                <textarea name="text" id="text" placeholder="Enter your text here..."></textarea>
+                <div class="buttons">
+                    <button type="submit" name="action" value="uppercase">Convert to Uppercase</button>
+                    <button type="submit" name="action" value="lowercase">Convert to Lowercase</button>
+                    <button type="submit" name="action" value="remove_punct">Remove Punctuation</button>
+                    <button type="submit" name="action" value="word_count">Word Count</button>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2024 Text Utils</p>
+        </footer>
+    </div>
+</body>
+</html>
