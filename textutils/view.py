@@ -9,7 +9,14 @@ def index(request):
     # return HttpResponse("<h2>hello from nicxx</h2>")
 
 def removepunc(request):
-    return HttpResponse("<h3>from punc</h3>")
+    text=request.GET.get('text')
+    analyzed=""
+    punc=""".,!?;:"'()[]{<>}-–—…"""
+    for i in text:
+        if i not in punc:
+            analyzed+=i
+    params={'analyzed':analyzed}
+    return render(request,'displaypuch.html',params)
     
 def capitalizefirst(request):
     return HttpResponse("<h3>from capitalize</h3>")
