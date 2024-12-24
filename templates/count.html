@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Text Utils</title>
+    <title>Processed Text Result</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* General Styles */
@@ -28,7 +28,6 @@
             color: #fff;
             padding: 20px 0;
             text-align: center;
-            position: relative;
         }
 
         header h1 {
@@ -66,23 +65,22 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        textarea {
-            width: 100%;
-            height: 150px;
-            padding: 10px;
-            border-radius: 5px;
+        .result-text {
+            background-color: #eaf8f5;
             border: 1px solid #004aad;
-            resize: none;
-            font-size: 1rem;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 1.2rem;
+            margin: 20px auto;
+            max-width: 600px;
+            word-wrap: break-word;
         }
 
-        .buttons {
-            margin-top: 10px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+        .action-buttons {
+            margin-top: 20px;
         }
 
         button {
@@ -93,7 +91,6 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
-            flex: 1;
         }
 
         button:hover {
@@ -113,30 +110,16 @@
             margin: 0;
             font-size: 0.9rem;
         }
-
-        /* Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease-in-out;
-        }
     </style>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <h1>Professional Text Utils</h1>
+            <h1>Processed Text Result</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#">Features</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
@@ -145,17 +128,21 @@
         </div>
     </header>
 
-    <main class="container fade-in">
-        <h2>Transform Your Text</h2>
-        <form action="/textutils" method="get">
-            <textarea name="text" id="text" placeholder="Enter your text here..."></textarea>
-            <div class="buttons">
-                <button type="submit" name="action" value="uppercase">Convert to Uppercase</button>
-                <button type="submit" name="action" value="lowercase">Convert to Lowercase</button>
-                <button type="submit" name="action" value="remove_punct">Remove Punctuation</button>
-                <button type="submit" name="action" value="word_count">Word Count</button>
-            </div>
-        </form>
+    <main class="container">
+        <h2>here is your text count</h2>
+        <div class="result-text">
+            <ul>
+
+                <!-- Replace the content inside the div with the processed text dynamically -->
+                    {% for i,j in data %}
+                        <li>{{i}} &nbsp&nbsp&nbsp&nbsp{{j}}</li>
+                    {% endfor  %}
+                    
+            </ul>
+        </div>
+        <div class="action-buttons">
+            <button onclick="window.location.href='/'">Go Back</button>
+        </div>
     </main>
 
     <footer>
@@ -163,14 +150,6 @@
             <p>&copy; 2024 Professional Text Utils. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // JavaScript Animation Example
-        document.addEventListener("DOMContentLoaded", () => {
-            const mainSection = document.querySelector("main");
-            mainSection.classList.add("fade-in");
-        });
-    </script>
 </body>
 
 </html>
