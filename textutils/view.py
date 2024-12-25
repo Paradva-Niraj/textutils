@@ -31,9 +31,48 @@ def index(request):
 #     return HttpResponse("<h3>from char count</h3>")
 
 
+### function define using get request and change to post request 
+
+# def textutils(request):
+#     text=request.GET.get('text','')
+#     req=request.GET.get('action','')
+#     print(req)
+#     if (req == 'remove_punct'):
+#         analyzed=""
+#         punc=""".,!?;:"'()[]@{<>}-–—…"""
+#         for i in text:
+#             if i not in punc:
+#                 analyzed+=i
+#         params={'analyzed':analyzed}
+#         return render(request,'displaypuch.html',params)
+#     elif (req == 'uppercase'):
+#         analyzed=text.upper()
+#         params={'uppercase':analyzed}
+#         return render(request,'uppercase.html',params)
+#     elif (req == 'lowercase'):
+#         analyzed=text.lower()
+#         params={'lowercase':analyzed}
+#         return render(request,'lowercase.html',params)
+#     elif (req == 'word_count'):
+#         list=[]
+#         count=[]
+#         c=0
+#         for i in text:
+#             if(i not in list):
+#                 list.append(i)
+#                 count.append(text.count(list[c]))
+#                 c+=1
+#         data=zip(list,count)
+#         params={'data':data}
+#         return render(request,'count.html',params)
+
+
+### function with post request
+
+
 def textutils(request):
-    text=request.GET.get('text','')
-    req=request.GET.get('action','')
+    text=request.POST.get('text','')
+    req=request.POST.get('action','')
     print(req)
     if (req == 'remove_punct'):
         analyzed=""
@@ -63,4 +102,3 @@ def textutils(request):
         data=zip(list,count)
         params={'data':data}
         return render(request,'count.html',params)
-

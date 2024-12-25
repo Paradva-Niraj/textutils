@@ -147,7 +147,7 @@
 
     <main class="container fade-in">
         <h2>Transform Your Text</h2>
-        <form action="/textutils" method="get">
+        <form action="/textutils/" method="post">{% csrf_token %}
             <textarea name="text" id="text" placeholder="Enter your text here..."></textarea>
             <div class="buttons">
                 <button type="submit" name="action" value="uppercase">Convert to Uppercase</button>
