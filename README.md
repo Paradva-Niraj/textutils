@@ -1,7 +1,7 @@
-<h1>TextUtil</h1>h1>
+<h1>TextUtil</h1>
 A simple web application built using Django that provides text manipulation utilities. This project is part of my learning journey with Django, showcasing basic concepts such as templates, URL routing, and backend processing without a database.
 
-<h2>Features</h2>h2>
+<h2>Features</h2>
 Remove punctuation from text.
 Convert text to uppercase.
 Remove extra spaces from text.
